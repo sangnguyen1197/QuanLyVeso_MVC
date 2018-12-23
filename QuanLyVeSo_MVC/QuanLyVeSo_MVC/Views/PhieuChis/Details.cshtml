@@ -1,0 +1,51 @@
+﻿@model QuanLyVeSo_MVC.DTO.PhieuChi
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Phiếu chi</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaPhieuChi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaPhieuChi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayChi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayChi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoiDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoiDung)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoTien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoTien)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa thông tin", "Edit", new { id = Model.MaPhieuChi }) |
+    @Html.ActionLink("Trở về danh sách", "Index")
+</p>

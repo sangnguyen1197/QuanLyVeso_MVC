@@ -1,0 +1,58 @@
+﻿@model QuanLyVeSo_MVC.DTO.KetQuaSoXo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KetQuaSoXo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Giai.TenGiai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Giai.TenGiai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Giai.SoTienNhan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Giai.SoTienNhan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoaiVeso.Tinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiVeso.Tinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgaySo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgaySo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoTrung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoTrung)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Trở về", "Index")
+</p>

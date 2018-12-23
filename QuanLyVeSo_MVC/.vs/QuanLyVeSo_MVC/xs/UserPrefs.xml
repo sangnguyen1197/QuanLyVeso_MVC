@@ -1,0 +1,20 @@
+﻿<Properties StartupConfiguration="{5B2F9979-7CF7-4437-AAAC-5AD79D616717}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="QuanLyVeSo_MVC/Controllers/PhatHanhsController.cs">
+    <Files>
+      <File FileName="QuanLyVeSo_MVC/Views/DaiLy/Create.cshtml" Line="36" Column="32" />
+      <File FileName="QuanLyVeSo_MVC/Controllers/DaiLyController.cs" Line="65" Column="10" />
+      <File FileName="QuanLyVeSo_MVC/Models/DiaChiModel.cs" Line="8" Column="37" />
+      <File FileName="QuanLyVeSo_MVC/Models/DaiLyModel.cs" Line="16" Column="32" />
+      <File FileName="QuanLyVeSo_MVC/Controllers/PhatHanhsController.cs" Line="116" Column="31" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.QuanLyVeSo__MVC PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/LamHan/Downloads/QuanLyVeso_ver2/QuanLyVeSo_MVC/QuanLyVeSo_MVC/Controllers/PhatHanhsController.cs" relfile="QuanLyVeSo_MVC/Controllers/PhatHanhsController.cs" line="153" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

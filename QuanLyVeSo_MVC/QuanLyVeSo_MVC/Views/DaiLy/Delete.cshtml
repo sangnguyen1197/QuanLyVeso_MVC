@@ -1,0 +1,57 @@
+﻿@model QuanLyVeSo_MVC.DTO.DaiLy
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa đại lý</h2>
+
+<h3>Bạn có muốn xóa đại lý này?</h3>
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaDaiLy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaDaiLy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenDaiLy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenDaiLy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-danger" /> |
+            @Html.ActionLink("Trở về danh sách", "Index")
+        </div>
+    }
+</div>

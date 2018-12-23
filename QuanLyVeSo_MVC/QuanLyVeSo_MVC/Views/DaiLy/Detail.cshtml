@@ -1,0 +1,50 @@
+﻿@model QuanLyVeSo_MVC.DTO.DaiLy
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Đại lý</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaDaiLy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaDaiLy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenDaiLy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenDaiLy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa thông tin", "Edit", new { id = Model.MaDaiLy }) |
+    @Html.ActionLink("Trở về danh sách", "Index")
+</p>

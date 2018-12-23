@@ -1,0 +1,43 @@
+﻿@model QuanLyVeSo_MVC.DTO.LoaiVeso
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Loại vé số</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaLoaiVeSo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaLoaiVeSo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GiaBan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaBan)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa thông tin", "Edit", new { id = Model.MaLoaiVeSo }) |
+    @Html.ActionLink("Trở về danh sách", "Index")
+</p>

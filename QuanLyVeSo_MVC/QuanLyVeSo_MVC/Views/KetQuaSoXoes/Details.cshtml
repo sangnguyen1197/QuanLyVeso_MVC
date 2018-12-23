@@ -1,0 +1,59 @@
+﻿@model QuanLyVeSo_MVC.DTO.KetQuaSoXo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Kết quả xổ số</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaKetQua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaKetQua)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Giai.TenGiai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Giai.TenGiai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoaiVeso.Tinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiVeso.Tinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgaySo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgaySo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoTrung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoTrung)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa thông tin", "Edit", new { id = Model.MaKetQua }) |
+    @Html.ActionLink("Trở về danh sách", "Index")
+</p>

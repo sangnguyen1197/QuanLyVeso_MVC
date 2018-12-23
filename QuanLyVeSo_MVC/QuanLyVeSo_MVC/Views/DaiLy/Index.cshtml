@@ -1,0 +1,69 @@
+﻿@model PagedList.IPagedList<QuanLyVeSo_MVC.DTO.DaiLy>
+    @using PagedList.Mvc;
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+    @{
+        ViewBag.Title = "Danh sách đại lý";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h2>Danh sách đại lý</h2>
+
+    <p>
+        <a class="btn btn-primary" href='@Url.Action("Create", "DaiLy")'>Thêm mới</a>
+    </p>
+
+    @using (Html.BeginForm("Index", "DaiLy", FormMethod.Get))
+    {
+        <p>
+            Tìm theo tên: @Html.TextBox("searchString", ViewBag.CurrentFilter as string)
+            <input type="submit" value="Tìm kiếm" /> |
+            <a class="btn btn-warning" href='@Url.Action("Index", "DaiLy")'>Tải lại</a>
+        </p>
+    }
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.ActionLink("Mã đại lý", "Index", new { currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Tên đại lý", "Index", new { currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Địa chỉ", "Index", new { currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("SĐT", "Index", new { currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaDaiLy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenDaiLy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiaChi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SDT)
+                </td>
+                <td>
+                    @Html.ActionLink("Sửa", "Edit", new { id = item.MaDaiLy }) |
+                    @Html.ActionLink("Chi tiết", "Detail", new { id = item.MaDaiLy }) |
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.MaDaiLy })
+                </td>
+            </tr>
+        }
+
+    </table>
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) trên @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+        new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

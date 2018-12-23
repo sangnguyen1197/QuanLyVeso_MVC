@@ -1,0 +1,58 @@
+﻿@model QuanLyVeSo_MVC.DTO.SoLuongDK
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa số lượng đăng ký</h2>
+
+<h3>Bạn có muốn xóa số lượng đăng ký này?</h3>
+<div>
+    <h4>Số lượng đăng ký</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaSoLuongDK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaSoLuongDK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DaiLy.TenDaiLy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DaiLy.TenDaiLy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayDK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayDK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuongDK1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongDK1)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-danger" /> |
+            @Html.ActionLink("Trở về danh sách", "Index")
+        </div>
+    }
+</div>

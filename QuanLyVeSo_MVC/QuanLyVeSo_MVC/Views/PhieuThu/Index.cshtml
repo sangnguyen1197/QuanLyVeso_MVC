@@ -1,0 +1,70 @@
+﻿@model PagedList.IPagedList<QuanLyVeSo_MVC.DTO.PhieuThu>
+    @using PagedList.Mvc;
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+    @{
+        ViewBag.Title = "Danh sách phiếu thu";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h2>Danh sách phiếu thu</h2>
+
+    <p>
+        <a class="btn btn-primary" href='@Url.Action("Create", "PhieuThu")'>Thêm mới</a>
+    </p>
+
+    @using (Html.BeginForm("Index", "PhieuThu", FormMethod.Get))
+    {
+        <p>
+            Tìm theo tên đại lý: @Html.TextBox("searchString", ViewBag.CurrentFilter as string)
+            <input type="submit" value="Tìm kiếm" /> |
+            <a class="btn btn-warning" href='@Url.Action("Index", "PhieuThu")'>Tải lại</a>
+        </p>
+    }
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.ActionLink("Mã phiếu thu", "Index", new { currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Tên đại lý", "Index", new { currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Ngày nộp", "Index", new { currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Số tiền nộp", "Index", new { currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaPhieuThu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DaiLy.TenDaiLy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayNop)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoTienNop)
+                </td>
+                <td>
+                    @Html.ActionLink("Sửa", "Edit", new { id = item.MaPhieuThu }) |
+                    @Html.ActionLink("Chi tiết", "Detail", new { id = item.MaPhieuThu }) |
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.MaPhieuThu })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <br />
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) trên @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+                    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
