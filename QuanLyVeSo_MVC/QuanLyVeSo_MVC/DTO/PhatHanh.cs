@@ -35,8 +35,7 @@
         [DataType(DataType.Currency)]
         [Display(Name = "Doanh thu")]
         public decimal? DoanhThuDPH { get; set; }
-
-        [DataType(DataType.Currency)]
+        
         [Display(Name = "Hoa hồng")]
         public decimal? HoaHong { get; set; }
 

@@ -194,3 +194,4 @@ D:\Documents\4th Year\1st Semester\n-Tier Model\BT\QL Vé Số\QuanLyVeso_ver2\Q
 D:\Documents\4th Year\1st Semester\n-Tier Model\BT\QL Vé Số\QuanLyVeso_ver2\QuanLyVeSo_MVC\QuanLyVeSo_MVC\obj\Debug\QuanLyVeSo_MVC.csproj.CopyComplete
 D:\Documents\4th Year\1st Semester\n-Tier Model\BT\QL Vé Số\QuanLyVeso_ver2\QuanLyVeSo_MVC\QuanLyVeSo_MVC\obj\Debug\QuanLyVeSo_MVC.dll
 D:\Documents\4th Year\1st Semester\n-Tier Model\BT\QL Vé Số\QuanLyVeso_ver2\QuanLyVeSo_MVC\QuanLyVeSo_MVC\obj\Debug\QuanLyVeSo_MVC.pdb
+D:\Documents\4th Year\1st Semester\n-Tier Model\BT\QL Vé Số\QuanLyVeso_ver2\QuanLyVeSo_MVC\QuanLyVeSo_MVC\obj\Debug\QuanLyVeSo_MVC.csprojAssemblyReference.cache

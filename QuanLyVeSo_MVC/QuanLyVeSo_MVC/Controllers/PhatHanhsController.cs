@@ -89,7 +89,7 @@ namespace QuanLyVeSo_MVC.Controllers
                     if (tk < 0.75 && phatHanh.SoLuong > sl)
                     {
                         //Error
-                        ModelState.AddModelError(string.Empty, "Phần trăm doanh số của đại lý này là "+tk+". Không thể tăng số lượng vé số phát hành");
+                        ModelState.AddModelError(string.Empty, "Phần trăm doanh số của đại lý này là "+ tk +". Không thể tăng số lượng vé số phát hành");
                         return View(phatHanh);
                     }
                 }
@@ -111,7 +111,7 @@ namespace QuanLyVeSo_MVC.Controllers
 
         private double thongke(string MaDaiLy)
         {
-            var phathanhs = db.PhatHanh.Where(x => x.MaDaiLy == MaDaiLy && x.NgayNhan < DateTime.Now).OrderByDescending(x => x.NgayNhan).Take(3).ToList();
+            var phathanhs = db.PhatHanh.AsNoTracking().Where(x => x.MaDaiLy == MaDaiLy && x.NgayNhan < DateTime.Now).OrderByDescending(x => x.NgayNhan).Take(3).ToList();
             int tongSoLuong = 0;
             int tongSLBan = 0;
             foreach(PhatHanh i in phathanhs)
@@ -166,6 +166,7 @@ namespace QuanLyVeSo_MVC.Controllers
                 }
 
                 db.Entry(phatHanh).State = EntityState.Modified;
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
